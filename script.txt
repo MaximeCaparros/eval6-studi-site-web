@@ -5,11 +5,11 @@ create TABLE specialite(
 
 create TABLE agent(
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    idSpecialite int,
-    nom varchar(255),
-    prenom varchar(255),
+    idSpecialite int NOT NULL,
+    nom varchar(255) NOT NULL,
+    prenom varchar(255) NOT NULL,
     dateN date,
-    codeId int,
+    codeId int NOT NULL,
     nationalite varchar(255),
     FOREIGN KEY (idSpecialite) REFERENCES specialite(id)
 );
@@ -51,7 +51,6 @@ create TABLE Mission(
     pays varchar(255),
     typeMission varchar(255),
     statut varchar(255),
-    planque varchar(255),
     specialite varchar(255),
     dateDebut date,
     dateFin date,
