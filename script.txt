@@ -1,0 +1,71 @@
+create TABLE specialite(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nomSpe varchar(255)
+);
+
+create TABLE agent(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idSpecialite int,
+    nom varchar(255),
+    prenom varchar(255),
+    dateN date,
+    codeId int,
+    nationalite varchar(255),
+    FOREIGN KEY (idSpecialite) REFERENCES specialite(id)
+);
+
+create TABLE cible(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nom varchar(255),
+    prenom varchar(255),
+    dateN date,
+    nomC varchar(255),
+    nationalite varchar(255)
+);
+
+create TABLE contact(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nom varchar(255),
+    prenom varchar(255),
+    dateN date,
+    nomc varchar(255),
+    nationalite varchar(255)
+);
+
+create TABLE Planque(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    adresse varchar(255),
+    pays varchar(255),
+    type varchar(255)
+);
+
+create TABLE Mission(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    idCible int NOT NULL ,
+    idAgent int NOT NULL ,
+    idContact int NOT NULL ,
+    idPlanque int,
+    titre varchar(255),
+    descr varchar(255),
+    nomC varchar(255),
+    pays varchar(255),
+    typeMission varchar(255),
+    statut varchar(255),
+    planque varchar(255),
+    specialite varchar(255),
+    dateDebut date,
+    dateFin date,
+    FOREIGN KEY (idCible) REFERENCES Cible(id),
+    FOREIGN KEY (idAgent) REFERENCES Agent(id),
+    FOREIGN KEY (idContact) REFERENCES Contact(id),
+    FOREIGN KEY (idPlanque) REFERENCES Planque(id)
+);
+
+create TABLE administrateur(
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nom varchar(255),
+    prenom varchar(255),
+    adresseMail varchar(255),
+    mdp varchar(255),
+    dateCrea date
+);
