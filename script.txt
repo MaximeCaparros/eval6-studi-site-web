@@ -51,14 +51,22 @@ create TABLE Mission(
     pays varchar(255),
     typeMission varchar(255),
     statut varchar(255),
+<<<<<<< HEAD
     specialite int NOT NULL,
+=======
+    specialite varchar(255) NOT NULL,
+>>>>>>> df0d61e9f32f64cd58265f8ee2d3617df1c68309
     dateDebut date,
     dateFin date,
     FOREIGN KEY (idCible) REFERENCES Cible(id),
     FOREIGN KEY (idAgent) REFERENCES Agent(id),
     FOREIGN KEY (idContact) REFERENCES Contact(id),
     FOREIGN KEY (idPlanque) REFERENCES Planque(id),
+<<<<<<< HEAD
     FOREIGN KEY (specialite)REFERENCES Specialite(id)
+=======
+    FOREIGN KEY (specialite) REFERENCES specialite(id)
+>>>>>>> df0d61e9f32f64cd58265f8ee2d3617df1c68309
 );
 
 create TABLE administrateur(
