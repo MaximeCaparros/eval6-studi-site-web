@@ -11,7 +11,7 @@ class mission{
     private string $pays;
     private string $typeMission;
     private string $statut;
-    private string $specialite;
+    private int $specialite;
     private string $dateDebut;
     private string $dateFin;
 
@@ -27,11 +27,11 @@ class mission{
      * @param string $pays
      * @param string $typeMission
      * @param string $statut
-     * @param string $specialite
+     * @param int $specialite
      * @param string $dateDebut
      * @param string $dateFin
      */
-    public function __construct(int $id, int $idCible, int $idAgent, int $idContact, int $idPlanque, string $titre, string $descr, string $nomC, string $pays, string $typeMission, string $statut, string $specialite, string $dateDebut, string $dateFin)
+    public function __construct(int $id, int $idCible, int $idAgent, int $idContact, int $idPlanque, string $titre, string $descr, string $nomC, string $pays, string $typeMission, string $statut, int $specialite, string $dateDebut, string $dateFin)
     {
         $this->id = $id;
         $this->idCible = $idCible;

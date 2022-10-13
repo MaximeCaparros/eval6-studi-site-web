@@ -8,6 +8,8 @@ class agent{
 	private int $codeId;
 	private string $nationalite;
 
+
+
     /**
      * @param int $id
      * @param int $idSpecialite
@@ -45,20 +47,28 @@ class agent{
     }
 
     /**
-     * @return int
+     * @return array|int
      */
-    public function getIdSpecialite(): int
+    public function getIdSpecialite()
     {
         return $this->idSpecialite;
     }
 
     /**
-     * @param int $idSpecialite
+     * @param array|int $idSpecialite
      */
-    public function setIdSpecialite(int $idSpecialite): void
+    public function setIdSpecialite($idSpecialite): void
     {
         $this->idSpecialite = $idSpecialite;
     }
+    /**
+     * @param int $idSpecialite
+     */
+    public function addIdSpecialite(int $idSpecialite): void
+    {
+        $this->idSpecialite[] = $idSpecialite;
+    }
+
 
     /**
      * @return string
@@ -139,6 +149,8 @@ class agent{
     {
         $this->nationalite = $nationalite;
     }
+
+
 
 
 }
